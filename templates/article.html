@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+{% load static %}
+{% static "images" as baseUrl %}
+
+
+<h1>Hello {{name}}</h1>
+
+    <form action="add" method="post">
+	{% csrf_token %}
+        Enter 1st number: <input type="text" name="number1"><br>
+        Enter 2nd number: <input type="text" name="number2"><br>
+        <input type="submit">
+    </form>
+
+	<h2 align="center">เขียนบทความ</h2>
+	<form action="addIndex" method="get">
+		<div class="form-group">
+			<label for="">ชื่อบทความ</label>
+			<input type="text" class="form-control" name="name">
+		</div>
+		<div class="form-group">
+			<label for="">รายละเอียดบทความ</label>
+			<input type="text" class="form-control" name="description">
+		</div>
+		<input type="submit" value="บันทึกบทความ" class="btn btn-primary">
+
+	</form>
+
+{% endblock %}

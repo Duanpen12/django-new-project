@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+    <div class="page-headr">
+        <h1><a href="/">Thai Desserts</a></h1>
+    </div>
+
+    {% for about in aboutus %}
+    <div class="post">
+        <p>published: {{ about.ub_date }}</p>
+        <h2><a href="">{{ about.name }}</a></h2>
+        <p>{{ about.desc }}</p>
+    </div>
+    {% endfor %}
+
+
+{% endblock %}
